@@ -49,7 +49,7 @@ $Promise.prototype._callHandlers = function () {
     while (this._handlerGroups.length) {
       const { successCb, errorCb, downstreamPromise } = this._handlerGroups.shift();
       if (this._state === "fulfilled") {
-        if (successCb) {
+        if (successCb) {  
           try {
             const resutado = successCb(this._value);
             if (resutado instanceof $Promise) {
